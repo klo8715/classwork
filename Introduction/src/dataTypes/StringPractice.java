@@ -1,9 +1,53 @@
 package dataTypes;
 
+import java.util.Scanner;
+
 public class StringPractice 
 {
+	static Scanner input;
+	static String user;
+	static int lineCount;
 
 	public static void main(String[] args) 
+	{
+		createAScanner();
+		lineCount=0;
+		demonstrateStringMethods();
+		promptName();
+		talkForever();
+		
+		
+	}
+	public static void promptName()
+	{
+		print ("hi, your \n name is?"); // \n means </br>
+		user = input.nextLine();
+		print("bye");
+	}
+	public static void talkForever()
+	{
+		while(true)
+		{
+			promptInput();
+		}
+	}
+	public static void promptInput()
+	{
+		print(user + ",Try putting in a string");
+		String userInput = input.nextLine();
+		print("you typed: "+userInput);
+	}
+	public static void print (String s)
+	{
+		lineCount++;
+		System.out.println("Line#"+lineCount+":"+s);
+	}
+	public static void createAScanner()
+	{
+		input = new Scanner (System.in);
+		
+	}
+	public static void demonstrateStringMethods()
 	{
 //		String text = new String("Hello World");
 		String text1 = "Hello World"; // same as above
