@@ -19,4 +19,19 @@ public class School implements Topic {
 			KristyLo.print("That's my favorite " + "part about school too");
 		}
 	}
+	public boolean isTriggered (String userInput)
+	{
+
+		if (KristyLo.findKeyword(userInput, "school", 0)>=0)
+		{
+			return true;
+		}
+		if (KristyLo.findKeyword(userInput, "class", 0)>=0)
+		{
+			return true;
+		}
+		return false;
+	}
+
+
 }
