@@ -9,6 +9,28 @@ public class ArraysMain {
 		arrayIntroMethod();
 		long endTime = System.currentTimeMillis();
 		System.out.println("Complete method in " + (endTime - startTime)+"milliseconds");
+		String[] someStrings = new String[100];
+		populateArray(someStrings);
+		changeString(someStrings[99]);
+		printArray(someStrings);
+	}
+	private static void changeString(String s)
+	{
+		s="This string has been changed";
+	}
+	public static void printArray(String[] a)
+	{
+		for (String s:a)
+		{
+			System.out.println(s);
+		}
+	}
+	public static void populateArray(String[] a)
+	{
+		for (int index= 0; index<a.length; index++)
+		{
+			a[index]="value"+(index+1);
+		}
 	}
 	public static void arrayIntroMethod()
 	{
@@ -38,7 +60,11 @@ public class ArraysMain {
 				}
 				
 				String[] strings1 = {"","",""};
-				String[] strings2 = new String[0];
+				String[] strings2 = new String[3];
+				for(int index=0; index <strings2.length; index++)
+				{
+					strings2[index] = "value"+(index+1);
+				}
 				
 				//these are constructors are different
 				for (String s: strings1)
