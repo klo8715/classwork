@@ -1,5 +1,7 @@
 package arrays;
 
+import java.util.Random;
+
 public class ArraysMain {
 	public static void main (String[]args)
 	{
@@ -10,35 +12,37 @@ public class ArraysMain {
 		SampleElement sample = new SampleElement(10);
 		sample.increase();
 		System.out.println("The sample element has " + "a number equal to " + sample.getNumber());
+		passByValueDemonstration();
 		long endTime = System.currentTimeMillis();
 		System.out.println("Complete method in " + (endTime - startTime)+"milliseconds");
-//		String[] someStrings = new String[100];
+	}
+//	private static void passByValueDemonstration()
+//	{
+//		String[] someStrings = new String[50];
 //		populateArray(someStrings);
-//		printArray(someStrings);
 //		int ten = 10;
 //		increase(ten);
 //		System.out.println("ten, increased is "+ten);
-		//is this method, we pass the ELEMENT 
-		//(a variable) not the array so no change will be made
-//		System.out.println("Before " +someStrings[99]);
-//		changeString(someStrings[99]);
-//		System.out.println("After \"changeString\"method" +someStrings[99]);
+//		System.out.println("Before " +someStrings[49]);
+//		changeString(someStrings[49]);
+//		System.out.println("After \"changeString\"method" +someStrings[49]);
 //		changeArray(someStrings);
-//		changeArrayElement(someStrings, 99);
-	}
+//		changeArrayElement(someStrings, 49);
+//		printArray(someStrings);
+//	} // question 1
 	private static void passByValueDemonstration()
 	{
-		String[] someStrings = new String[100];
+		String[] someStrings = new String[50];
 		populateArray(someStrings);
-		printArray(someStrings);
 		int ten = 10;
 		increase(ten);
 		System.out.println("ten, increased is "+ten);
-		System.out.println("Before " +someStrings[99]);
-		changeString(someStrings[99]);
-		System.out.println("After \"changeString\"method" +someStrings[99]);
+		System.out.println("Before " +someStrings[49]);
+		changeString(someStrings[49]);
+		System.out.println("After \"changeString\"method" +someStrings[49]);
 		changeArray(someStrings);
-		changeArrayElement(someStrings, 99);
+		changeArrayElement(someStrings, 49);
+		printArray(someStrings);
 	}
 	private static void changeArrayElement(String[] someStrings, int i)
 	{
@@ -70,6 +74,15 @@ public class ArraysMain {
 			System.out.println(s);
 		}
 	}
+//	public static void populateArray(String[] a)
+//	{
+//		for (int index= 0; index<a.length; index++)
+//		{
+//			double rand = Math.random(); 
+//			int roll = (int)(50*rand)+1; 
+//			a[index]="value"+(roll);
+//		}
+//	} // question 1
 	public static void populateArray(String[] a)
 	{
 		for (int index= 0; index<a.length; index++)
