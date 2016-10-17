@@ -82,14 +82,27 @@ public class ArraysMain {
 //			int roll = (int)(50*rand)+1; 
 //			a[index]="value"+(roll);
 //		}
-//	} // question 1
+//	} // question 2
 	public static void populateArray(String[] a)
 	{
 		for (int index= 0; index<a.length; index++)
 		{
-			a[index]="value"+(index+1);
+			double rand = Math.random(); 
+			int roll1 = (int)(6*rand)+1;
+			int roll2 = (int)(6*rand)+1;
+		
+				a[index]="value"+(roll2+roll1);
+			
 		}
 	}
+	public static 
+//	public static void populateArray(String[] a)
+//	{
+//		for (int index= 0; index<a.length; index++)
+//		{
+//			a[index]="value"+(index+1);
+//		}
+//	}
 	public static void arrayIntroMethod()
 	{
 		//construct 2 arrays
