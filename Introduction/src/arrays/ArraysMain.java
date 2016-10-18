@@ -151,34 +151,7 @@ public class ArraysMain {
 
 }
 
-// public static void main(String[] args) 
-//     {
-//         int[] random = new int[50];
-//         int[] random2 = new int[20];
-//     	populateArray1(random);
-//     	searchUnsorted(random,38);
-//     	populateArray2(random2);
-//     	searchSorted(random2,18);
-// //    	isSorted(int[] random2);
-    	
-     
-//     }
-//     public static void populateArray1(int[] a)
-// 	{
-// 		for (int index= 0; index<a.length; index++)
-// 		{
-// 			double rand = Math.random(); 
-// 			int roll = (int)(50*rand)+1; 
-// 			a[index]= roll;
-// 		}
-// 	}
-//     public static void populateArray2(int[] a)
-//     {
-// 		for (int index= 0; index<20; index++)
-// 		{
-// 			a[index]=index+1;
-// 		}
-// 	}
+
 //     public static int searchUnsorted(int[] arrayToSearch, int key)
 //     {
 //     	for(int i=0;i<arrayToSearch.length;i++)
