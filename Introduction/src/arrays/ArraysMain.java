@@ -102,7 +102,7 @@ public class ArraysMain {
 			
 		}
 	}
-}
+
 //	public static void populateArray(String[] a)
 //	{
 //		for (int index= 0; index<a.length; index++)
@@ -110,7 +110,7 @@ public class ArraysMain {
 //			a[index]="value"+(index+1);
 //		}
 //	}
-<<<<<<< HEAD
+
 //	public static void arrayIntroMethod()
 //	{
 //		//construct 2 arrays
@@ -158,7 +158,6 @@ public class ArraysMain {
 //	}
 //
 //}
-=======
 	public static void arrayIntroMethod()
 	{
 		//construct 2 arrays
@@ -204,8 +203,7 @@ public class ArraysMain {
 					System.out.println(s);
 				}
 	}
-
-}
+	}
 
 
 //     public static int searchUnsorted(int[] arrayToSearch, int key)
@@ -231,4 +229,4 @@ public class ArraysMain {
 //     	}
 //      return -1;
 //     }
->>>>>>> branch 'master' of https://github.com/klo8715/classwork.git
+
