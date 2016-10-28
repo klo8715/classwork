@@ -15,6 +15,8 @@ public class ArrayMethod {
 //		swap(testArray,0,testArray.length-1);
 		shuffle(testArray);
 		print(testArray);
+		testPrimes(20);
+		testPrimes2(20);
 //		if(checkHalfway(testArray,12,0,testArray.length-1)){
 //			System.out.println("The number you are searching for is less than the value in the middle of the array");
 //		}
@@ -65,67 +67,110 @@ public class ArrayMethod {
 	 * @return
 	 */
 
-	private static boolean checkHalfway(int[] arr, int searchValue, int begin, int end) {
-		return searchValue < arr[(begin+end+1)/2];
-	}
-	public static int longestConsecutiveSequence(int[] array1){
-		count = 0;
-		for(int i = 0; i<array1.length; i++){
-			if(array1[i]+1==array1[i+1]){
-				count++;
-			}
-		}
-	}
-	public static int[] getSubArray(int[] arr, int startIndex, int endIndex)
-	{
-		int[] subArray = new int[endIndex = startIndex +1];
-		for (int i=0; i<subArray.length; i++)
-		{
-			subArray[i] = arr[startIndex+1];
-		}
-	}
-	public static boolean contains(int[], int[] subArray)
-	{
-		for (int i=0; i<arr.length;i++)
-		{
-			int j= 0;
-			while (j<length)
-			{
-				if (subArray[j]==arr)
-				{
-					
-				}
-			}
-		}
-	}
+//	private static boolean checkHalfway(int[] arr, int searchValue, int begin, int end) {
+//		return searchValue < arr[(begin+end+1)/2];
+//	}
+//	public static int longestConsecutiveSequence(int[] array1){
+//		count = 0;
+//		for(int i = 0; i<array1.length; i++){
+//			if(array1[i]+1==array1[i+1]){
+//				count++;
+//			}
+//		}
+//	}
+//	public static int[] getSubArray(int[] arr, int startIndex, int endIndex)
+//	{
+//		int[] subArray = new int[endIndex = startIndex +1];
+//		for (int i=0; i<subArray.length; i++)
+//		{
+//			subArray[i] = arr[startIndex+1];
+//		}
+//	}
+//	public static boolean contains(int[], int[] subArray)
+//	{
+//		for (int i=0; i<arr.length;i++)
+//		{
+//			int j= 0;
+//			while (j<length)
+//			{
+//				if (subArray[j]==arr)
+//				{
+//					
+//				}
+//			}
+//		}
+//	}
 	private static void testPrimes (int numberToTest)
 	{
 		int lastToCheck = (int) (Math.sqrt(numberToTest));
-		boolean[] theNumbers = new boolean(numberToTest);
+		boolean[] theNumber = new boolean[numberToTest];
 		for (int i= 0; i< numberToTest;i++)
 		{
 			theNumber[i] = true;
 		}
 		theNumber[0] = false;
 		theNumber[1] = false;
-		for(int text = 2; text<= lastToCheck; text = text + increment)
+		for(int prime = 2; prime <= lastToCheck;prime++)
 		{
-			if(!first)
+			if(theNumber[prime])
 			{
-				theNumber[test] = false;
+				int increment = prime;
+				boolean first = true;
+				for(int text = prime; text< lastToCheck; text = text + increment)
+				{
+					if(!first)
+					{
+						theNumber[text] = false;
 				
-			}
-			else
-			{
-				first= false;
+					}
+					else
+					{
+						first= false;
+					}
+				}
 			}
 		}
-		for (int i=0; i<theNumbers.length; i++)
+		for (int i=0; i<theNumber.length; i++)
 		{
 			if(theNumber[i])
 			{
-				System.out.println(i + "is prime.");
+				System.out.println(i + " is prime.");
 			}
 		}
 	}
+	private static void testPrimes2(int numberToTest) {
+		int lastToCheck = (int)(Math.sqrt(numberToTest));
+		boolean[] theNumbers = new boolean[numberToTest];
+		for(int i=0; i < numberToTest; i++){
+			theNumbers[i] = true;
+		}
+		theNumbers[0] = false;
+		theNumbers[1] = false;
+		
+		for(int prime = 2; prime <= lastToCheck; prime++){
+			//when checking 50 numbers,
+			//tests 2,3,4,5,6,7 as if prime
+			if(theNumbers[prime]){
+				//only checks numbers that are prime
+				//(numbers that haven't been "crossed off")
+				//won't check 4 and 6 (crossed off by 2)
+				System.out.println("\n"+prime+ " is prime. "
+						+ "Crossing off:");
+
+				for(int test = prime + prime; test < numberToTest; 
+						test = test + prime){
+					System.out.print(test+", ");
+					theNumbers[test] = false;
+				}
+			}
+		}
+		System.out.println();
+		for(int i = 0; i < theNumbers.length; i++){
+			if(theNumbers[i]){
+				System.out.println(i + " is prime.");
+			}
+		}
+		
+	}
+
 }
