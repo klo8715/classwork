@@ -45,11 +45,11 @@ public class Array {
 		 int[] arr = array;
 		 while(randArry.length< arr.length)
 		 {
-			 for(int i=0;i<arr.length;i++)
-			 {	
-				 arr[i]=
-				 if 
-			 }
+//			 for(int i=0;i<arr.length;i++)
+//			 {	
+//				 arr[i]=
+//				 if 
+//			 }
 		 }
 		 return randArry;
 	 }
