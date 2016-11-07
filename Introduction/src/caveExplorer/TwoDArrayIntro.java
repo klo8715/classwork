@@ -64,5 +64,29 @@ public class TwoDArrayIntro {
 		return false;
 	}
 		
-	
+	private static void createMap(int row, int col){
+		String[][] map = new String[row*3][col*3];
+		for(int i = 0; i < map.length; i++){
+			for(int j = 0; j < map[i].length; j++){
+				(map[i][j]) = " ";
+			}
+		}
+		for(int j = 0; j < map[0].length; j++){
+			for(int third = 0; third < row*3; third+=3){
+				map[third][j] = "_";
+			}
+			//map[3][j] = "_";
+			map[map.length-1][j] = "_";
+		}
+
+		for(int i = 1; i < map.length; i++){
+			for(int third = 0; third < col*3; third+=3){
+				map[i][third] = "|";
+			}
+			//map[i][0] = "|";
+			map[i][map[0].length-1] = "|";
+		}
+		
+		printPic(map);
+	}
 }
