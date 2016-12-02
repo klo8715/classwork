@@ -15,25 +15,51 @@ public class Practice {
 		String[][] field = new String[mines.length][mines[0].length];
 		matchValues(field,mines);
 		printPlc(field);
-		boolean[][] grid = new boolean[16][5];
-		createBorders(grid, 16, 5);
+//		boolean[][] grid = new boolean[16][5];
+//		createBorders(grid, 16, 5);
+		createMap(10,10);
 		
 		
 	}
-	private static void createBorders(boolean[][] grid, int i, int j) 
-	{
-		for(int row = 0; row<=i;row++)
-		{
-				for(int col = 0; col<=j;col++)
-				{
-					if(i%3==1)
-					{
-						grid[row][col] = true;
-					}
-				}
+	private static void createMap(int row, int col){
+		String[][] map = new String[row*3][col*3];
+		for(int i = 0; i < map.length; i++){
+			for(int j = 0; j < map[i].length; j++){
+				(map[i][j]) = " ";
+			}
 		}
-//		matchValues();
+		for(int j = 0; j < map[0].length; j++){
+			for(int third = 0; third < row*3; third+=3){
+				map[third][j] = "_";
+			}
+			//map[3][j] = "_";
+			map[map.length-1][j] = "_";
+		}
+
+		for(int i = 1; i < map.length; i++){
+			for(int third = 0; third < col*3; third+=3){
+				map[i][third] = "|";
+			}
+			//map[i][0] = "|";
+			map[i][map[0].length-1] = "|";
+		}
+		
+		printPlc(map);
 	}
+//	private static void createBorders(boolean[][] grid, int i, int j) 
+//	{
+//		for(int row = 0; row<=i;row++)
+//		{
+//				for(int col = 0; col<=j;col++)
+//				{
+//					if(i%3==1)
+//					{
+//						grid[row][col] = true;
+//					}
+//				}
+//		}
+////		matchValues();
+//	}
 	
 	private static void matchValues(String[][] field, boolean[][] mines)
 	{

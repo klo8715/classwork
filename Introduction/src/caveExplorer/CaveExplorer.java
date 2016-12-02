@@ -11,6 +11,8 @@ public class CaveExplorer {
 	
 	public static void main(String[] args)
 	{
+		Connect4.play();
+		in=new Scanner(System.in);
 		caves= new caveRoom[5][5];
 		for( int row =0; row< caves.length; row++)
 		{
