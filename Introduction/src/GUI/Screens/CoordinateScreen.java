@@ -1,9 +1,11 @@
 package GUI.Screens;
-
+import GUI.Components.Action;
+import GUI.SimpleGames.MyScreen;
 
 
 import java.awt.Color;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
@@ -14,10 +16,10 @@ import GUI.Components.Action;
 import GUI.Components.TextLabel;
 import GUI.Components.TextArea;
 import GUI.Components.Visible;
+import GUI.SimpleGames.MouseFollower;
 import GUI.Components.Graphics;
-
 public class CoordinateScreen extends Screen 
-               implements MouseMotionListener{
+               implements MouseMotionListener,MouseListener{
 
 	
 	//FIELD
@@ -33,12 +35,12 @@ public class CoordinateScreen extends Screen
 	@Override
 	public void initObjects(ArrayList<Visible> viewObjects) {
 		button = new Button(20,100,80,40,
-				"The Button with a long name",new Color(100,100,250),
+				"The Button",new Color(100,100,250),
 				new Action() {
 			
 			public void act() {
-				// TODO Auto-generated method stub
-				
+				MouseFollower.game.
+				setScreen(MouseFollower.moveScreen);
 			}
 		});
 		viewObjects.add(button);
@@ -49,24 +51,56 @@ public class CoordinateScreen extends Screen
 			area= new TextArea (20,200,500,40, "this is really long test. its prints over");
 			viewObjects.add(area);
 			
-			link = new Graphics(10,20, "resources/sampleImages/toon_link.jpg");
-			viewObjects.add(link);
+//			link = new Graphics(10,20, "resources/sampleImages/toon_link.jpg");
+//			viewObjects.add(link);
 			
 	}
 
-	public void mouseDragged(MouseEvent e) {
+	
+	@Override
+	public MouseMotionListener getMouseMotionListener(){ 
+		return this;
+	}
+	public void mouseDragged(MouseEvent arg0) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public void mouseMoved(MouseEvent e) {
-		int mx = e.getX();//get mouse X coordinate
-		int my = e. getY();//get Y coord
-		text.setText("Mouse at: "+mx +", "+my);
+	public void mouseMoved(MouseEvent m) {
+		text.setText("Mouse at" + m.getX()+", "+m.getY());
+	}
+	
+	public MouseListener getMouseListener(){
+		return this;
+}
+
+	public void mouseEntered(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 
-	public MouseMotionListener getMouseMotionListener(){ 
-		return this;
+	public void mouseExited(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void mousePressed(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void mouseReleased(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		if(button.isHovered(e.getX(), e.getY()))
+		{
+			button.act();
+		}
+		
 	}
 	
 	
