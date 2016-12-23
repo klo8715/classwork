@@ -1,21 +1,37 @@
 package GUI.Components;
 
-public class ClickableGraphics  implements Clickable{
+import GUI.Components.Action;
+import GUI.Components.Clickable;
 
-	@Override
+public class ClickableGraphics extends Graphics implements Clickable {
+
+	private Action action;
+	
+	public void setAction(Action a){
+		this.action = a;
+		update();
+	}
+	
+	public ClickableGraphics(int x, int y, int w, int h, String imageLocation) {
+		super(x, y, w, h, imageLocation);
+	}
+
+	public ClickableGraphics(int x, int y, double scale, String imageLocation) {
+		super(x, y, scale, imageLocation);
+	}
+
+	public ClickableGraphics(int x, int y, String imageLocation) {
+		super(x, y, imageLocation);
+	}
+
 	public boolean isHovered(int x, int y) {
-		// TODO Auto-generated method stub
-		return false;
+		return x > getX() && x < getX() + getWidth() && y > getY() && y < getY() + getHeight();
 	}
 
-	@Override
 	public void act() {
-		// TODO Auto-generated method stub
-		
-	}
-	public void setAction(Action a)
-	{
-		
+		if(action != null)action.act();
 	}
 
 }
+
+

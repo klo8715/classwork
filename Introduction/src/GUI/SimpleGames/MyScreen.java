@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import GUI.Screen;
 import GUI.Components.Action;
 import GUI.Components.Button;
+import GUI.Components.ClickableGraphics;
 import GUI.Components.Graphics;
 import GUI.Components.Visible;
 
@@ -25,7 +26,7 @@ public class MyScreen extends Screen implements MouseListener
 
 	@Override
 	public void initObjects(ArrayList<Visible> viewObjects) {
-		link = new Graphics(200,200,.25,"resources/sampleImages/toon_link.jpg");
+		link = new ClickableGraphics(200,200,.25,"resources/sampleImages/toon_link.jpg");
 		back = new Button(50,50,100,60,"Back", 
 				Color.GRAY, new Action() {
 			

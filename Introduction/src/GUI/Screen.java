@@ -41,6 +41,9 @@ public abstract class Screen {
 	public int getHeight(){
 		return image.getHeight();
 	}
+	public void addObject(Visible v){
+		viewObjects.add(v);
+	}
 
 	public void update() {
 		Graphics2D g = image.createGraphics();
@@ -69,5 +72,24 @@ public abstract class Screen {
 	public MouseListener getMouseListener(){
 		return null;
 	}
+	public void remove(Visible v){
+		if(viewObjects.contains(v)){
+			viewObjects.remove(v);//all other objects slide up in order
+		}
+	}
+	public void moveToFront(Visible v){
+		if(viewObjects.contains(v)){
+			viewObjects.remove(v);//all other objects slide up in order
+			viewObjects.add(v);
+		}
+	}
+	
+	public void moveToBack(Visible v){
+		if(viewObjects.contains(v)){
+			viewObjects.remove(v);//all other objects slide up in order
+			viewObjects.add(0, v);
+		}
+	}
+	
 	
 }
