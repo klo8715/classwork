@@ -77,5 +77,4 @@ public class MyScreen extends Screen implements MouseListener
 	public MouseListener getMouseListener(){
 		return this;
 	}
-
 }
