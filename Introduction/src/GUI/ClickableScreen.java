@@ -17,11 +17,6 @@ public abstract class ClickableScreen extends Screen implements MouseListener{
 	}
 	public abstract void initAllObjects(List<Visible> viewObjects);
 	@Override
-	public MouseListener getMouseListener()
-	{
-		return this;
-	}
-	@Override
 	public void initObjects(ArrayList<Visible> viewObjects) {
 		 initAllObjects(viewObjects);
 		clickable = new ArrayList<Clickable>();
@@ -80,6 +75,11 @@ public abstract class ClickableScreen extends Screen implements MouseListener{
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
+	}
+	@Override
+	public MouseListener getMouseListener()
+	{
+		return this;
 	}
 
 }

@@ -4,6 +4,6 @@ import GUI.Components.Visible;
 
 public interface PlayerInterface extends Visible{
 
-	void increaseScore();
+	void increaseScore(int i);
 
 }

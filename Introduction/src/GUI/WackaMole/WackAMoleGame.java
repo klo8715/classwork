@@ -16,7 +16,7 @@ public class WackAMoleGame extends GUIApplication {
 	}
 
 	public static void main(String[] args) {
-		WackAMoleGame game = new WackAMoleGame(600, 500);
+		WackAMoleGame game = new WackAMoleGame(800, 500);
 		Thread app = new Thread(game);
 		app.start();
 	}
